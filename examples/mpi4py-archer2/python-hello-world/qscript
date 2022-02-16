@@ -1,0 +1,18 @@
+#!/bin/bash --login
+
+#SBATCH --job-name qscript
+#SBATCH --nodes=1              # Request one node
+#SBATCH --tasks-per-node=128   # Request 128 tasks per node
+#SBATCH --cpus-per-task=1      # Request one cpu per task
+#SBATCH --time=00:20:00
+
+#SBATCH --account=ta006
+#SBATCH --partition=standard
+#SBATCH --qos=standard
+
+module load epcc-job-env
+module load cray-python
+
+# Run on 128 tasks (a full ARCHER2 node)
+
+srun python ./hello.py
