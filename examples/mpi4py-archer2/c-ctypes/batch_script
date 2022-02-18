@@ -1,17 +1,15 @@
 #!/bin/bash --login
 
-#SBATCH --job-name qscript
+#SBATCH --job-name mpi4py
 #SBATCH --nodes=1              # Request one node
 #SBATCH --tasks-per-node=4     # Request four tasks per node
 #SBATCH --cpus-per-task=1      # Request one cpu per task
-#SBATCH --time=00:20:00
+#SBATCH --time=00:10:00
 
-#SBATCH --account=ta006
+#SBATCH --account=XXX
 #SBATCH --partition=standard
-#SBATCH --qos=standard
+#SBATCH --qos=short
 
-module load epcc-job-env
 module load cray-python
 
-
-srun python ./mpi-driver.py
+srun python mpi-driver.py

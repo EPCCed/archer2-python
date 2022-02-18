@@ -26,4 +26,4 @@ test.pyf: test.f90
 	f2py test.f90 -m fortran -h test.pyf
 
 clean:
-	rm -rf fortran.so test.pyf
+	rm -rf fortran.*.so test.pyf

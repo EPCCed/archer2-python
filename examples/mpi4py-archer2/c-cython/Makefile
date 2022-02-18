@@ -34,13 +34,16 @@ PYTHON = python
 INCLUDE_PYTHON = ${shell ${PYTHON} -c 'import sysconfig; print(sysconfig.get_path("include"))'}
 INCLUDE_MPI4PY = ${shell ${PYTHON} -c 'import mpi4py; print( mpi4py.get_include())'}
 
+# Here's the fake "cython"
+wrapper:        wrapper.so
+	${PYTHON} setup.py build_ext --inplace
+
 # Generate the shared object
 wrapper.so:	${TEST}.o wrapper.o
-	$(CC) -shared -o wrapper.so $^
+	$(CC) -shared -o libwrapper.so $^
 
-# Here's the fake "cython"
 wrapper.c:	wrapper.pyx
-	${PYTHON} setup.py build_ext --inplace
+	cython wrapper.pyx
 
 # Compile the C wrapper
 wrapper.o:	wrapper.c

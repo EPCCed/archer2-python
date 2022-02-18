@@ -1,7 +1,16 @@
-from distutils.core import setup
-from Cython.Build import cythonize
+from setuptools import Extension, setup
+from Cython.Build import cythonize, build_ext
+
+
+extensions = [
+    Extension("wrapper", ["wrapper.pyx"],
+         compiler_directives={'language_level' : "3"},
+         libraries=["wrapper"],
+         library_dirs=["."]),
+    ]
 
 setup (
     name = "Fake",
-    ext_modules = cythonize('wrapper.pyx'),
+    cmdclass = {"build_ext": build_ext},
+    ext_modules = cythonize(extensions),
 )
