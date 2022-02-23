@@ -7,7 +7,7 @@ def my_median(years):
         ages.append(y - 1900)
 
     ages.sort()
-    mid = len(ages)/2
+    mid = len(ages)//2
 
     return ages[mid-1:mid+2]
 
