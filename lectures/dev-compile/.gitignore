@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
 *.o
 *.so
+c_sqrt_ffi.c
