@@ -6,12 +6,12 @@ the UK national supercomputing service.
 
 #### Local details for the online course
 
-Timetable & location are in ./2022-online.md
+Timetable & location are [here](./2022-online.md)
 
 
 #### What you will need
 
-- Your Laptop (Windows/MacOS/Linux) and a wifi connection (with eduroam credentials or as guest)
+- Your Laptop (Windows/MacOS/Linux) and a network connection
 - Anaconda distribution of Python Version 3.9 or above. This may be downloaded
   from https://www.continuum.io/
 - The course material should be downloaded from this repository
